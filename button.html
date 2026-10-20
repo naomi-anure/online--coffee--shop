@@ -87,12 +87,22 @@
         
     }
 
-    .naomi-buttoon:active{   
+    .naomi-button:active{   
         opacity: 0.5;
     }
   .tweet-button:hover{
  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
   }  
+
+  .banking{
+    background:yellow;
+    color:rgb(70, 21, 21);
+  }
+  .banking:hover{
+    color:green;
+  }
+
+  
     </style> 
 
 <button class="subscribe-button">
@@ -105,4 +115,46 @@
 <button class="tweet-button">TWEET</button>
 <button class="naomi-button">NAOMI</button>
 
+<div>
+    Upload File:
+    <br>
+    <input type="file">
+</div>
 
+<div>
+    HTML
+    <input type="radio" name="lang">
+    <br>
+    CSS
+    <input type="radio" name="lang">
+    <br>
+    JAVASCRIPT
+    <input type="radio" name="lang">
+</div>
+
+<div>
+    <h1>RATE IT</h1>
+    <input type="range">
+</div>
+
+<div>
+Select department of choice:
+    <select class="banking">
+        <option></option>
+        <option>Banking and finance</option>
+        <option>Hospitality management</option>
+        <option>Accounting</option>
+        <option>Business administration and management</option>
+        <option>Office technology and management</option>
+        <option>Legal studies</option>
+        <option>Religious and Philosophy</option>
+        <option>Mass communication</option>
+        <option>Local government</option>
+        <option>Electrical electronics</option>
+        <option>Computer science</option>
+        <option>Statistics</option>
+        <option>Political science</option>
+        <option>Micro biology</option>
+        <option>Language and literal studies</option>
+    </select>
+</div>

@@ -10,6 +10,7 @@ body{
     min-height: 100vh;
     display:flex;
     justify-content: center;
+    max-width: 0ch;
     align-items: center;
     background: url(mybackground.jpeg) center/cover;
 
