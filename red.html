@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strucural Pseudo classes</title>
+    <style>
+        p:first-child{
+            color: red;
+        }
+
+        p:last-child{
+            color: green;
+        }
+
+        q:lang(en) {
+            color: blue;
+        }
+
+        p:nth-child(2) {
+            background: red;
+            color: white;
+        }
+
+        /* pseudo elements */
+        div::first-line {
+            color: red;
+        }
+
+        div::first-letter {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        div::before {
+            content: "Text Before:   ";
+            /* content: url(C:/Users/user/Pictures/Capture1.PNG); */
+            color: red;
+        }
+
+        div::after {
+            content: "Text After!";
+            color: green;
+        }
+
+        ul ::marker {
+            color: red;
+            font-size: 20px;
+        }
+
+        ::selection {
+            color: red;
+            background: yellow;
+        }
+
+        /* ATTRIBUTE SELECTORS */
+        /* selects an element that has the attribute*/
+        a[target] {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* selects an element that opens on a new tab color green */
+        a[target="_blank"] {
+            color: green;
+            font-size: 20px;
+        }
+
+        /* selects and style based on a particular word in an attribute of an element */
+        [title~="my"] {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+    </style> 
+</head>
+<body>
+        <section title="this is my first div">
+            This is a section element
+        </section>
+
+        <a href="https://www.tiktok.com" target="_self">click to visit tiktok.com</a>
+        <br>
+        <br>
+        <a href="https://www.youtube.com" target="_blank">click to visit youtube.com</a>
+        
+        <h2>ordered list</h2>
+         <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+         </ol>
+
+         <h2>unordered list</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <div>
+            Lorem Ipsum is the standard dummy text used in graphic design, publishing, and 
+            web development to test layouts and visualize fonts without distracting readers
+             with readable, meaningful content. It is a scrambled version of a 1st-century 
+             Latin BC text by the Roman philosopher Cicero.
+        </div>
+
+        <br>
+        
+        <q lang="en">This is a quote element</q>
+        <q lang="no">dette er et sitatelement</q>
+
+        <p>This is the first p element</p>
+
+        <div>
+            <p>This is a paragraph element</p>
+            <p>This is another paragraph element</p>
+        </div>
+</body>
+</html>
