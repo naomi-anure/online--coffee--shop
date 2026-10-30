@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="coffe1.css">
+    <link rel="icon" href="data:,">
+    <title>ONLINE COFFEE STORE</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="logo.jpeg" class="logo-img" alt="Coffee Store Logo">
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#product">products</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="cart-icon-wrapper">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <form class="search-form" id="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="cart-items-container">
+            <div class="cart-list"></div>
+            <div class="cart-total">
+                <h3>total: <span id="total-price">#0</span></h3>
+                <a href="#" id="checkout-btn" class="btn checkout-btn">Checkout Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="peace.mp4" type="video/mp4">   
+        </video>
+        <div class="content">
+            <h3>fresh coffee in the morning</h3>
+            <p>Having a good coffee provides significant cognitive boost, lowers the risks of chronic diseases, and aids metabolic health, making it a powerful addition to a daily routine.</p>
+            <a href="#menu" class="btn">get yours now</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us</h1>
+        <div class="row">
+            <div class="image">
+                <img src="coffee3.jpeg" alt="About Us">
+            </div>
+            <div class="content">
+                <h3>what makes our coffee special</h3>
+                <p>Having a good coffee provides significant cognitive boost, lowers the risks of chronic diseases, and aids metabolic health, making it a powerful addition to a daily routine.</p>
+                <p>Having a good coffee provides significant cognitive boost, lowers the risks of chronic diseases, and aids metabolic health, making it a powerful addition to a daily routine.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h1 class="heading">Our <span>menu</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="coffee4.jpeg" alt="Espresso">
+                <h3>Espresso Supreme</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="croissant.jpg" alt="chocolate croissant">
+                <h3>Chocolate Croissant</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="waffles.jpg" alt="loaded waffles">
+                <h3>loaded waffles</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="oreo.jpg" alt="cheese">
+                <h3> Loaded Waffles</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="smoky.jpg" alt="Loaded Smoky BBQ Burger with Melted Cheese">
+                <h3>Loaded Smoky BBQ Burger with Melted Cheese</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="siz.jpg" alt="Grilled cheese">
+                <h3>Yummy Sea Food</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="combo.jpg" alt="Vanilla Cold Brew">
+                <h3>Yummy Burger Combo</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="banana.jpg" alt="Banana milkshakes">
+                <h3>Banana Milkshakes</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="hotdog.jpg" alt="Vanilla Cold Brew">
+                <h3>yummy</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="cho.jpg" alt="Chocolate Milkshake">
+                <h3>Chocolate Milkshake</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="one.jpg" alt="Burger Combo">
+                <h3>Loaded Burger with Mozerella Cheese</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="milky.jpg" alt="Milky Doughnut">
+                <h3>Milky Doughnut</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="filled sub.jpg" alt="sub">
+                <h3>Cheesy Sub</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="cut.jpg" alt="Vanilla Cold Brew">
+                <h3>Cupuccino Coffee Drink</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="fries.jpg" alt="Vanilla Cold Brew">
+                <h3>Chicken and Fries</h3>
+                <div class="price">#5,000 <span>#10,000</span></div>
+                <a href="#" class="btn">Add to cart</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product" id="product">
+        <h1 class="heading">our <span>products</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="coffee7.jpeg" alt="Arabica Coffee Beans">
+                </div>
+                <div class="content">
+                    <h3>Arabic Coffee Beans</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">#7,000 <span>#9,000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="coffee2.jpeg" alt="Robusta Dark Roast">
+                </div>
+                <div class="content">
+                    <h3>Robusta Dark Roast</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">#7,000 <span>#9,000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="coffee7.jpeg" alt="Decaf Blend">
+                </div>
+                <div class="content">
+                    <h3>Decaf Organic Blend</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">#7,000 <span>#9,000</span></div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>  
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.682051094933!2d3.4346624739741993!3d6.4348696241890835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52199dd5c07%3A0x19406696345e0b27!2sKrispy%20Kreme%20Doughnuts%20%26%20Coffee%2C%20Victoria%20Island!5e0!3m2!1sen!2sng!4v1788572694054!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+            <form id="contact-form">
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" id="contact-name" placeholder="name" required>
+                </div>
+
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" id="contact-email" placeholder="email" required>
+                </div>
+
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" id="contact-phone" placeholder="number" required>
+                </div>
+
+                <input type="submit" value="contact now" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <section class="blogs" id="blogs">
+        <h1 class="heading">our <span>blogs</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="coffee7.jpeg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">tasty and refreshing coffee</a>
+                    <span>by naomi anure, 2026</span>
+                    <p>having a good coffee is a pleasure.</p>
+                    <a href="#" class="btn">read more.</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="coffee7.jpeg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">tasty and refreshing coffee</a>
+                    <span>by naomi anure, 2026</span>
+                    <p>having a good coffee is a pleasure.</p>
+                    <a href="#" class="btn">read more.</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="coffee7.jpeg" alt="blog">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">tasty and refreshing coffee</a>
+                    <span>by naomi anure, 2026</span>
+                    <p>having a good coffee is a pleasure.</p>
+                    <a href="#" class="btn">read more.</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+
+        <div class="link">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#product">products</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </div>
+
+        <div class="credit">created by <span>naomi anure</span> | all right reserved</div>
+        <div class="test">⚠️ DEMO & PRACTICE WEBSITE
+This website is a student/development project for training purposes only. It is not a real business, is not affiliated with any real company at this location, and does not sell real products. All payments are in Paystack TEST MODE; no real money is processed or accepted.
+</div>
+    </section>
+
+    <!-- Compact Floating Search Popup -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 class="modal-title">Search Results</h2>
+                <span class="close-search-modal">&times;</span>
+            </div>
+            <div id="search-results-container" class="search-results-grid"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <!-- Paystack Inline Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="coffee1.js"></script>
+</body>
+</html>
