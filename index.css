@@ -655,9 +655,9 @@ section {
     display: flex;
     background-color: rgb(131, 112, 76);
     color: white;
-    width: 100%;          /* Changed from 500px to prevent horizontal overflow */
-    max-width: 500px;     /* Keeps max width on desktop */
-    margin: 1.5rem auto;  /* Centers it nicely */
+    width: 100%;
+    max-width: 500px;
+    margin: 1.5rem auto;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
@@ -855,7 +855,41 @@ section {
         width: 90vw;
     }
 
-    /* Stack Sections neatly on mobile */
+    /* Force 2 Columns for Menu and Products on Mobile */
+    .menu .box-container, 
+    .product .box-container,
+    .blogs .box-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* Scale Down Box Content for Mobile 2-Column Layout */
+    .menu .box-container .box {
+        padding: 1rem !important;
+    }
+
+    .menu .box-container .box img {
+        height: 12rem !important;
+    }
+
+    .menu .box-container .box h3,
+    .product .box-container .box h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .menu .box-container .box .price,
+    .product .box-container .box .price {
+        font-size: 1.4rem !important;
+    }
+
+    .menu .box-container .box .btn,
+    .product .box-container .box .btn {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 1.1rem !important;
+        margin: 1rem 0 0 0 !important;
+    }
+
+    /* Stack Sections Neatly on Mobile */
     .home .content h3 {
         font-size: 4rem;
     }
