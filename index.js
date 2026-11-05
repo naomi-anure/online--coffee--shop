@@ -57,7 +57,6 @@ function executeSearch() {
     const filterValue = searchBox.value.toLowerCase().trim();
     const menuAndProductBoxes = document.querySelectorAll('.menu .box, .product .box');
 
-    // Keep all menu sections fully visible in the background
     menuAndProductBoxes.forEach(item => item.style.display = '');
 
     if (!filterValue) {
@@ -65,7 +64,6 @@ function executeSearch() {
         return;
     }
 
-    // Collect matching items
     const matches = [];
     menuAndProductBoxes.forEach(box => {
         const heading = box.querySelector('h3');
@@ -84,7 +82,6 @@ function executeSearch() {
         }
     });
 
-    // Populate Compact Popup Results
     if (searchResultsContainer) {
         searchResultsContainer.innerHTML = '';
 
@@ -112,7 +109,6 @@ function executeSearch() {
     if (searchModal) searchModal.classList.add('active');
 }
 
-// Add to Cart and Auto-Close Popup
 if (searchResultsContainer) {
     searchResultsContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal-add-btn')) {
@@ -120,10 +116,8 @@ if (searchResultsContainer) {
             const price = parseInt(e.target.getAttribute('data-price'), 10);
             const imgSrc = e.target.getAttribute('data-img');
 
-            // Add item to cart
             addToCart(name, price, imgSrc);
 
-            // Instantly hide the search popup and close the search bar
             if (searchModal) searchModal.classList.remove('active');
             if (searchForm) searchForm.classList.remove('active');
             if (searchBox) searchBox.value = '';
@@ -131,7 +125,6 @@ if (searchResultsContainer) {
     });
 }
 
-// Close search modal handlers
 if (closeSearchModalBtn) {
     closeSearchModalBtn.onclick = () => {
         if (searchModal) searchModal.classList.remove('active');
@@ -164,7 +157,6 @@ function showToast(message) {
 
 // --- Cart Actions ---
 document.addEventListener('click', (e) => {
-    // Menu item "Add to cart" button
     if (e.target.classList.contains('btn') && e.target.closest('.menu .box')) {
         e.preventDefault();
         const box = e.target.closest('.box');
@@ -176,7 +168,6 @@ document.addEventListener('click', (e) => {
         addToCart(name, price, imgSrc);
     }
 
-    // Product item shopping cart icon
     if (e.target.classList.contains('fa-shopping-cart') && e.target.closest('.product .box')) {
         e.preventDefault();
         const box = e.target.closest('.box');
@@ -203,7 +194,6 @@ function addToCart(name, price, imgSrc) {
     showToast(`${name} added to cart!`);
 }
 
-// Attached to window so HTML inline onclick events can access it globally
 window.removeFromCart = function(name) {
     cart = cart.filter(item => item.name !== name);
     saveCart();
@@ -219,7 +209,6 @@ function updateCartUI() {
     if (!cartList) return;
     cartList.innerHTML = '';
 
-    // Update Counter Badge
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (cartBadge) cartBadge.textContent = totalCount;
 
@@ -251,7 +240,7 @@ function updateCartUI() {
     if (totalPriceElement) totalPriceElement.textContent = `#${grandTotal.toLocaleString()}`;
 }
 
-// --- Paystack Payment Gateway Integration with Dashboard Metadata ---
+// --- Paystack Integration ---
 window.payWithPaystack = function(e) {
     if (e) e.preventDefault();
 
@@ -269,47 +258,29 @@ window.payWithPaystack = function(e) {
     }
 
     if (typeof PaystackPop === 'undefined') {
-        showToast('Paystack script failed to load. Check ad-blockers.');
-        console.error('PaystackPop is not defined. Check if an extension is blocking js.paystack.co');
+        showToast('Paystack script failed to load.');
         return;
     }
 
-    // Prepare item breakdown for Paystack Dashboard
     const itemDetails = cart.map(item => `${item.name} (Qty: ${item.quantity}) - #${(item.price * item.quantity).toLocaleString()}`).join(', ');
     const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
 
     const handler = PaystackPop.setup({
         key: 'pk_test_eb745de41d63f1d29266885468be44a264ca9ec4',
         email: customerEmail,
-        amount: grandTotal * 100, // Amount in kobo
+        amount: grandTotal * 100,
         currency: 'NGN',
         ref: 'COFFEE_ORDER_' + Math.floor((Math.random() * 1000000000) + 1),
-        
-        // Metadata renders these custom fields inside your Paystack Dashboard
         metadata: {
             custom_fields: [
-                {
-                    display_name: "Ordered Items",
-                    variable_name: "ordered_items",
-                    value: itemDetails
-                },
-                {
-                    display_name: "Total Items Count",
-                    variable_name: "total_items_count",
-                    value: totalUnits.toString()
-                },
-                {
-                    display_name: "Order Source",
-                    variable_name: "order_source",
-                    value: "Coffee Website Storefront"
-                }
+                { display_name: "Ordered Items", variable_name: "ordered_items", value: itemDetails },
+                { display_name: "Total Items Count", variable_name: "total_items_count", value: totalUnits.toString() },
+                { display_name: "Order Source", variable_name: "order_source", value: "Coffee Website Storefront" }
             ]
         },
-
         onClose: function() {
             showToast('Transaction cancelled.');
         },
-        
         callback: function(response) {
             showToast('Payment successful! Ref: ' + response.reference);
             cart = [];
@@ -337,5 +308,4 @@ if (contactForm) {
     });
 }
 
-// Render cart on initial load
 updateCartUI();
